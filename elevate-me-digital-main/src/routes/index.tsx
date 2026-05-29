@@ -29,11 +29,11 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-import fahmiaAsset from "@/assets/fahmia-nobg.png.asset.json";
-import fahmiaLogo from "@/assets/fahmia-logo.png.asset.json";
-import certBugsai from "@/assets/cert-bugsai.jpg.asset.json";
-import certPython from "@/assets/cert-python.jpg.asset.json";
-import certAsean from "@/assets/cert-asean.jpg.asset.json";
+import fahmiaAsset from "@/assets/fahmia-new.png";
+import fahmiaLogo from "@/assets/my-logo.png";
+import certBugsai from "@/assets/cert-bugsai.jpg";
+import certPython from "@/assets/cert-python.jpg";
+import certAsean from "@/assets/cert-asean.jpg";
 
 const FACEBOOK_URL = "https://www.facebook.com/ismeefahmia.bilay";
 const INSTAGRAM_URL = "https://www.instagram.com/me_younggs";
@@ -41,7 +41,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/me_younggs";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fahmia Bilay — Administrative Support & IS Student" },
+      { title: "Fahmia Portfolio" },
       { name: "description", content: "Portfolio of Fahmia Bilay — BS Information Systems student where administrative support meets digital innovation." },
     ],
   }),
@@ -65,15 +65,15 @@ type Achievement = {
 const achievements: Achievement[] = [
   {
     title: "Completed Operations and Administrative Internship at DOST-DNSC BUGSAI TBI (2026)",
-    cert: certBugsai.url,
+    cert: certBugsai,
   },
   {
     title: "ASEAN AI Hackathon 2026: Workshop on Human-Centric AI and Regional Problem Solving",
-    cert: certAsean.url,
+    cert: certAsean,
   },
   {
     title: "Completed Python Essentials 1 — Cisco Networking Academy (2025)",
-    cert: certPython.url,
+    cert: certPython,
   },
   {
     title: "Completed Cash for Work at DNSC Registrar Office under KALAHI-CIDSS (2025)",
@@ -113,7 +113,7 @@ function Portfolio() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border">
         <div className="mx-auto max-w-6xl px-5 lg:px-8 h-16 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2 font-display font-extrabold tracking-tight text-lg">
-            <img src={fahmiaLogo.url} alt="Fahmia logo" className="size-9 object-contain" />
+            <img src={fahmiaLogo} alt="Fahmia logo" className="h-16 w-auto object-contain" />
             <span>Fahmia<span className="text-primary">.</span></span>
           </a>
           <nav className="hidden md:flex items-center gap-1">
@@ -236,7 +236,7 @@ function Portfolio() {
               <div className="absolute inset-4 rounded-full border border-primary/30" />
               <div className="absolute inset-10 rounded-full border border-primary/20" />
               <img
-                src={fahmiaAsset.url}
+                src={fahmiaAsset}
                 alt="Fahmia Bilay portrait"
                 className="relative size-full object-contain drop-shadow-2xl animate-float"
                 loading="eager"
@@ -264,7 +264,7 @@ function Portfolio() {
               </div>
               <div className="relative aspect-square rounded-full overflow-hidden border border-primary/30 bg-gradient-to-br from-primary/10 to-transparent flex items-end justify-center">
                 <img
-                  src={fahmiaAsset.url}
+                  src={fahmiaAsset}
                   alt="Fahmia Bilay"
                   className="size-full object-contain"
                 />
@@ -537,7 +537,7 @@ function Portfolio() {
       <footer className="border-t border-border mt-12">
         <div className="mx-auto max-w-6xl px-5 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 font-display font-extrabold tracking-tight">
-            <img src={fahmiaLogo.url} alt="Fahmia logo" className="size-8 object-contain" />
+           <img src={fahmiaLogo} /> alt="Fahmia logo" className="size-8 object-contain" /
             <span>Fahmia<span className="text-primary">.</span></span>
           </div>
           <p className="text-sm italic text-muted-foreground">"Inspiring Change, Creating Futures"</p>
