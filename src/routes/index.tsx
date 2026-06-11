@@ -42,11 +42,12 @@ import {
 } from "@/components/ui/dialog";
 
 
-import fahmiaAsset from "@/assets/fahmia-new.png";
-import fahmiaLogo from "@/assets/my-logo.png";
-import certBugsai from "@/assets/cert-bugsai.jpg";
-import certPython from "@/assets/cert-python.jpg";
-import certAsean from "@/assets/cert-asean.jpg";
+import fahmiaAsset from "@/assets/fahmia-nobg.png.asset.json";
+import fahmiaLogo from "@/assets/fahmia-logo.png.asset.json";
+import certBugsai from "@/assets/cert-bugsai.jpg.asset.json";
+import certPython from "@/assets/cert-python.jpg.asset.json";
+import certAsean from "@/assets/cert-asean.jpg.asset.json";
+import certTree from "@/assets/cert-treeplanting.jpg.asset.json";
 
 const FACEBOOK_URL = "https://www.facebook.com/ismeefahmia.bilay";
 const INSTAGRAM_URL = "https://www.instagram.com/me_younggs";
@@ -54,7 +55,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/me_younggs";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fahmia Portfolio" },
+      { title: "Fahmia Bilay — Administrative Support & IS Student" },
       { name: "description", content: "Portfolio of Fahmia Bilay — BS Information Systems student where administrative support meets digital innovation." },
     ],
   }),
@@ -72,21 +73,33 @@ const navItems = [
 
 type Achievement = {
   title: string;
+  label?: string;
   cert?: string;
 };
 
 const achievements: Achievement[] = [
   {
     title: "Completed Operations and Administrative Internship at DOST-DNSC BUGSAI TBI (2026)",
-    cert: certBugsai,
+    label: "Internship Certificate",
+    cert: certBugsai.url,
   },
   {
     title: "ASEAN AI Hackathon 2026: Workshop on Human-Centric AI and Regional Problem Solving",
-    cert: certAsean,
+    label: "Hackathon Certificate",
+    cert: certAsean.url,
   },
   {
     title: "Completed Python Essentials 1 — Cisco Networking Academy (2025)",
-    cert: certPython,
+    label: "Course Certificate",
+    cert: certPython.url,
+  },
+  {
+    title: "Tree Planting Activity — Barangay Ising, Carmen, Davao del Norte (2026)",
+    label: "Community Service Certificate",
+    cert: certTree.url,
+  },
+  {
+    title: "Completed Cash for Work at DNSC Registrar Office under KALAHI-CIDSS (2025)",
   },
 ];
 
@@ -123,7 +136,7 @@ function Portfolio() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border">
         <div className="mx-auto max-w-6xl px-5 lg:px-8 h-16 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2" aria-label="Fahmia — home">
-            <img src={fahmiaLogo} alt="Fahmia logo" className="h-16 w-auto object-contain" />
+            <img src={fahmiaLogo.url} alt="Fahmia logo" className="size-10 object-contain" />
           </a>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -247,7 +260,7 @@ function Portfolio() {
               <div className="absolute inset-4 rounded-full border border-primary/30" />
               <div className="absolute inset-10 rounded-full border border-primary/20" />
               <img
-                src={fahmiaAsset}
+                src={fahmiaAsset.url}
                 alt="Fahmia Bilay portrait"
                 className="relative size-full object-contain drop-shadow-2xl animate-float"
                 loading="eager"
@@ -275,7 +288,7 @@ function Portfolio() {
               </div>
               <div className="relative aspect-square rounded-full overflow-hidden border border-primary/30 bg-gradient-to-br from-primary/10 to-transparent flex items-end justify-center">
                 <img
-                  src={fahmiaAsset}
+                  src={fahmiaAsset.url}
                   alt="Fahmia Bilay"
                   className="size-full object-contain"
                 />
@@ -297,7 +310,7 @@ function Portfolio() {
 
           <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
             <Stat value="2+" label="Internships" />
-            <Stat value="4+" label="Achievements" />
+            <Stat value="5+" label="Achievements" />
             <Stat value="6+" label="Tools Proficiency" />
             <Stat value="100%" label="Dedication" />
           </div>
@@ -480,6 +493,9 @@ function Portfolio() {
                     <Sparkles className="size-3" />
                   </span>
                   <div className="flex-1">
+                    {a.label && (
+                      <p className="text-[10px] uppercase tracking-wider text-primary/80 font-semibold mb-1">{a.label}</p>
+                    )}
                     <p className="text-sm leading-relaxed">{a.title}</p>
                     {clickable && (
                       <p className="mt-2 text-xs text-primary inline-flex items-center gap-1">
@@ -549,7 +565,7 @@ function Portfolio() {
       <footer className="border-t border-border mt-12">
         <div className="mx-auto max-w-6xl px-5 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <img src={fahmiaLogo} alt="Fahmia logo" className="size-18 object-contain" />
+            <img src={fahmiaLogo.url} alt="Fahmia logo" className="size-9 object-contain" />
           </div>
 
           <p className="text-sm italic text-muted-foreground">"Inspiring Change, Creating Futures"</p>
@@ -777,4 +793,3 @@ function ContactDialog() {
     </Dialog>
   );
 }
-
