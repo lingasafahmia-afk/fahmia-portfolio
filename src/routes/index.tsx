@@ -55,7 +55,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/me_younggs";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fahmia Bilay — Administrative Support & IS Student" },
+      { title: "Fahmia Bilay|Portfolio" },
       { name: "description", content: "Portfolio of Fahmia Bilay — BS Information Systems student where administrative support meets digital innovation." },
     ],
   }),
